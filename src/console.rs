@@ -27,7 +27,11 @@ impl Console {
         let mut alive = true;
 
         while alive {
-            let inp = input(&format!("{}> ", self.username.clone()));
+            let inp = input(&format!(
+                "/{} | {}> ",
+                self.position.join("/"),
+                self.username.clone()
+            ));
             let instructions: Vec<&str> = inp.split(' ').collect();
 
             //println!("{:?}", instructions);

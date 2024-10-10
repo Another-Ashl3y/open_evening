@@ -22,36 +22,36 @@ impl Game {
             "{}",
             colored::Colorize::bold("\n=== Welcome to the CAT challenge ===")
         );
-        println!(
-            "This challenge requires the {} and {} command.",
-            colour_command("cat"),
-            colour_command("ls")
-        );
-        println!(
-            "The {} command will show you the contents of a file.",
-            colour_command("cat")
-        );
-        println!("The {} or \"list stuff\" command will show you all the files in your current directory.", colour_command("ls"));
-        println!("A directory is like a position in a book. Except that book is split into folders and those folders contain more folders.");
-        sleep(Duration::from_secs(3));
-        println!("\n{}", colored::Colorize::bold("=== Instructions ==="));
-        println!("1. Type {} and press enter.", colour_command("ls"));
-        println!(
-            "2. This will output the contents of the directory. \n  {} should be amongst them.",
-            colour_command("flag.txt")
-        );
-        println!(
-            "3. Type {} and press enter.",
-            display(&format!(
-                "{} {}",
-                colour_command("cat"),
-                colored::Colorize::cyan("flag.txt")
-            ))
-        );
-        println!("4. Type {} and press enter.", colour_command("exit"));
-        println!(
-            "5. Type the entire content of the flag.txt file into the terminal and press enter.\n\n"
-        );
+        //  println!(
+        //      "This challenge requires the {} and {} command.",
+        //        colour_command("cat"),
+        //        colour_command("ls")
+        //    );
+        //    println!(
+        //      "The {} command will show you the contents of a file.",
+        //      colour_command("cat")
+        //     );
+        //  println!("The {} or \"list stuff\" command will show you all the files in your current directory.", colour_command("ls"));
+        //  println!("A directory is like a position in a book. Except that book is split into folders and those folders contain more folders.");
+        // sleep(Duration::from_secs(3));
+        // println!("\n{}", colored::Colorize::bold("=== Instructions ==="));
+        //  println!("1. Type {} and press enter.", colour_command("ls"));
+        //  println!(
+        //      "2. This will output the contents of the directory. \n  {} should be amongst them.",
+        //      colour_command("flag.txt")
+        //  );
+        //  println!(
+        //      "3. Type {} and press enter.",
+        //      display(&format!(
+        //              "{} {}",
+        //          colour_command("cat"),
+        //         colored::Colorize::cyan("flag.txt")
+        //      ))
+        // );
+        //println!("4. Type {} and press enter.", colour_command("exit"));
+        //println!(
+        //    "5. Type the entire content of the flag.txt file into the terminal and press enter.\n\n"
+        //);
 
         let flag = "flag{th3_cAt_fl@g!!!}";
         let mut flag_found = false;
@@ -103,16 +103,16 @@ impl Game {
             "\n{}",
             colour_command("=== Welcome to the MAZE challenge ===")
         );
-        println!("This challenge will teach you the \"cd\" or \"change directory\" command.");
-        println!("To use the \"cd\" command type:\n  cd [path]\nWhere [path] is the path you want to change directory to.");
-        println!("You can use the \"dir\" command to show your current directory");
-        println!("\nTo go back a folder type: cd ../\nTo enter a folder type: cd [folder name]");
-        sleep(Duration::from_secs(3));
-        println!(
-            "To complete this challenge you must explore the folders and find the flag.txt file."
-        );
-        println!("Once you have found the flag.txt file run: cat flag.txt");
-        println!("Then exit the console and enter your flag.");
+        //println!("This challenge will teach you the \"cd\" or \"change directory\" command.");
+        //println!("To use the \"cd\" command type:\n  cd [path]\nWhere [path] is the path you want to change directory to.");
+        //println!("You can use the \"dir\" command to show your current directory");
+        //println!("\nTo go back a folder type: cd ../\nTo enter a folder type: cd [folder name]");
+        //sleep(Duration::from_secs(3));
+        //println!(
+        //    "To complete this challenge you must explore the folders and find the flag.txt file."
+        //);
+        //println!("Once you have found the flag.txt file run: cat flag.txt");
+        //println!("Then exit the console and enter your flag.");
 
         let flag = "flag{i_@m_A_maz3_eXpert23!}";
         let mut flag_found = false;
@@ -176,10 +176,10 @@ impl Game {
             "{}",
             colored::Colorize::bold("\n=== Welcome to the TREES challenge ===")
         );
-        println!("Trees are really cool don't you think?");
-        println!("Anyway, there is another command called \"tree\".");
-        println!("You can use this to find files much faster.");
-        println!("Try it yourself!\n\nRemember to type exit once you have the flag and then enter it into the terminal.");
+        //println!("Trees are really cool don't you think?");
+        //println!("Anyway, there is another command called \"tree\".");
+        //println!("You can use this to find files much faster.");
+        //println!("Try it yourself!\n\nRemember to type exit once you have the flag and then enter it into the terminal.");
 
         let flag = "flag{tre3s_MAk3_lIfe_eas1er}";
         let mut flag_found = false;

@@ -15,8 +15,8 @@ impl File {
     }
     pub fn name(&self) -> String {
         match self {
-            File::Directory(d) => d.name.clone(),
-            File::Text(t) => t.name.clone(),
+            File::Directory(d) => format!("{} DIRECTORY", d.name.clone()),
+            File::Text(t) => format!("{} TXT", t.name.clone()),
         }
     }
     pub fn format(&self, position: usize) -> String {
