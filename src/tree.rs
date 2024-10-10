@@ -22,12 +22,10 @@ impl File {
     pub fn format(&self, position: usize) -> String {
         let mut q = format!("{}¬ {}", "  ".repeat(position), self.name());
         if let File::Directory(d) = self {
-            q = format!("{} DIRECTORY", q);
+            q = format!("{}", colored::Colorize::red(q.as_str()));
             for child in d.contents.clone() {
                 q = format!("{}\n|{}", q, child.format(position + 1));
             }
-        } else {
-            q = format!("{} FILE", q);
         }
         q
     }

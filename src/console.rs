@@ -1,5 +1,6 @@
 use crate::game::{colour_command, input};
 use crate::tree::File;
+use colored;
 use std::io::{stdout, Write};
 use std::thread;
 use std::time::Duration;
@@ -62,9 +63,9 @@ impl Console {
                             for child in d.contents {
                                 match child {
                                     File::Directory(d) => {
-                                        println!("{} {: >30}", d.name, "| DIRECTORY")
+                                        println!("{}", colored::Colorize::red(d.name.as_str()))
                                     }
-                                    File::Text(t) => println!("{} {: >30}", t.name, "| FILE"),
+                                    File::Text(t) => println!("{}", t.name),
                                 }
                             }
                         }

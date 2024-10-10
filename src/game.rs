@@ -20,7 +20,7 @@ impl Game {
         sleep(Duration::from_secs(1));
         println!(
             "{}",
-            colored::Colorize::bold("\n=== Welcome to the CAT challenge ===")
+            colour_command("\n=== Welcome to the CAT challenge ===")
         );
         //  println!(
         //      "This challenge requires the {} and {} command.",
@@ -59,7 +59,7 @@ impl Game {
         let mut root = File::Directory(Directory::new("/".to_string()));
         let mut home = File::Directory(Directory::new("home".to_string()));
         let mut user = File::Directory(Directory::new(self.username.clone()));
-        let secret_0 = File::Text(Text::new("secret_0.txt".to_string(), "You have found a secret (1/?). Find all secrets and win a sweet!\nFirst Secret: Ducks Are Cool\nMake sure to write this down!".to_string()));
+        let secret_0 = File::Text(Text::new("secret_0.txt".to_string(), "You have found a secret (1/3). Find all secrets and win a sweet!\nFirst Secret: Ducks Are Cool\nMake sure to write this down!".to_string()));
         let flag_file = File::Text(Text::new("flag.txt".to_string(), flag.to_string()));
 
         user.add_file(flag_file);
@@ -128,7 +128,7 @@ impl Game {
             "easter_egg.txt".to_string(),
             "We get biscuits every week in A-Level computer science!".to_string(),
         ));
-        let secret_1 = File::Text(Text::new("secret_1.txt".to_string(), "You have found a secret (2/?). Find all secrets and win a sweet!\nSecond Secret: Computer science is the best!\nMake sure to write this down!".to_string()));
+        let secret_1 = File::Text(Text::new("secret_1.txt".to_string(), "You have found a secret (2/3). Find all secrets and win a sweet!\nSecond Secret: Computer science is the best!\nMake sure to write this down!".to_string()));
         let flag_file = File::Text(Text::new("flag.txt".to_string(), flag.to_string()));
 
         desktop.add_file(easter_egg);
@@ -172,11 +172,13 @@ impl Game {
     }
 
     pub fn challenge_2(&mut self) {
+        sleep(Duration::from_secs(1));
         println!(
             "{}",
-            colored::Colorize::bold("\n=== Welcome to the TREES challenge ===")
+            colour_command("\n=== Welcome to the TREES challenge ===")
         );
-        //println!("Trees are really cool don't you think?");
+        println!("Trees are really cool don't you think?");
+        sleep(Duration::from_secs(1));
         //println!("Anyway, there is another command called \"tree\".");
         //println!("You can use this to find files much faster.");
         //println!("Try it yourself!\n\nRemember to type exit once you have the flag and then enter it into the terminal.");
@@ -214,7 +216,7 @@ impl Game {
             "blackmail.txt".to_string(),
             "I know about the biscuits".to_string(),
         ));
-        let secret_2 = File::Text(Text::new("secret_2.txt".to_string(), "You have found a secret (3/?). Find all secrets and win a sweet!\nThird Secret: I looked from root\nMake sure to write this down!".to_string()));
+        let secret_2 = File::Text(Text::new("secret_2.txt".to_string(), "You have found a secret (3/3). Find all secrets and win a sweet!\nThird Secret: I looked from root\nMake sure to write this down!".to_string()));
 
         trash.add_file(blackmail);
         desktop.add_file(trash);
@@ -272,9 +274,15 @@ impl Game {
     }
 
     fn time_to_enter_flag(&self) {
-        println!("/=====================\\");
-        println!("| Time to enter flag! |");
-        println!("\\=====================/");
+        println!(
+            "{}",
+            colored::Colorize::on_black("/=====================\\")
+        );
+        println!("{}", colored::Colorize::on_black("| Time to enter flag! |"));
+        println!(
+            "{}",
+            colored::Colorize::on_black("\\=====================/")
+        );
     }
 }
 
