@@ -34,6 +34,8 @@ impl Console {
             ));
             let instructions: Vec<&str> = inp.split(' ').collect();
 
+            //println!("{:?}", self.position);
+            //println!("{}", self.root);
             //println!("{:?}", instructions);
 
             if instructions[0] == "" {
@@ -58,7 +60,12 @@ impl Console {
                     Some(f) => match f {
                         File::Directory(d) => {
                             for child in d.contents {
-                                println!("¬ {}", child.name());
+                                match child {
+                                    File::Directory(d) => {
+                                        println!("{} {: >30}", d.name, "| DIRECTORY")
+                                    }
+                                    File::Text(t) => println!("{} {: >30}", t.name, "| FILE"),
+                                }
                             }
                         }
                         File::Text(t) => println!("{} is a TXT file", t.name),

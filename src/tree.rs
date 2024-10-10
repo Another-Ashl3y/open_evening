@@ -15,16 +15,19 @@ impl File {
     }
     pub fn name(&self) -> String {
         match self {
-            File::Directory(d) => format!("{} DIRECTORY", d.name.clone()),
-            File::Text(t) => format!("{} TXT", t.name.clone()),
+            File::Directory(d) => d.name.clone(),
+            File::Text(t) => t.name.clone(),
         }
     }
     pub fn format(&self, position: usize) -> String {
         let mut q = format!("{}¬ {}", "  ".repeat(position), self.name());
         if let File::Directory(d) = self {
+            q = format!("{} DIRECTORY", q);
             for child in d.contents.clone() {
                 q = format!("{}\n|{}", q, child.format(position + 1));
             }
+        } else {
+            q = format!("{} FILE", q);
         }
         q
     }
