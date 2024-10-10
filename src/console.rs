@@ -1,5 +1,8 @@
-use crate::game::input;
+use crate::game::{colour_command, input};
 use crate::tree::File;
+use std::io::{stdout, Write};
+use std::thread;
+use std::time::Duration;
 
 pub struct Console {
     root: File,
@@ -16,6 +19,11 @@ impl Console {
         }
     }
     pub fn start(&mut self) {
+        //thread::spawn(|| loop {
+        //    thread::sleep(Duration::from_secs(30));
+        //    println!("\nType {} for help", colour_command("help"));
+        //});
+
         let mut alive = true;
 
         while alive {
@@ -90,7 +98,7 @@ impl Console {
                 }
             } else if instructions[0] == "cd" {
                 if instructions.len() == 1 {
-                    println!("cd (change directory) can be used to change your working directory (use the \"dir\" command to check your working directory)\nTo use the command run:\n  cd [path]");
+                    println!("cd (change directory) can be used to change your working directory (use the \"dir\" command to check your working directory)\nTo use the command run:\n  {}", colour_command("cd [path]"));
                     continue;
                 }
                 let search_path = self.get_search_path(instructions[1]);
